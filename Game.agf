@@ -2398,6 +2398,42 @@
               <Event Index="4" />
             </Interactions>
           </InventoryItem>
+          <InventoryItem>
+            <CursorImage>71</CursorImage>
+            <Description xml:space="preserve">New inventory item</Description>
+            <HotspotX>15</HotspotX>
+            <HotspotY>14</HotspotY>
+            <ID>14</ID>
+            <Image>71</Image>
+            <Name>iPaper</Name>
+            <PlayerStartsWithItem>True</PlayerStartsWithItem>
+            <Properties />
+            <Interactions>
+              <Event Index="0" />
+              <Event Index="1" />
+              <Event Index="2" />
+              <Event Index="3" />
+              <Event Index="4" />
+            </Interactions>
+          </InventoryItem>
+          <InventoryItem>
+            <CursorImage>72</CursorImage>
+            <Description xml:space="preserve">New inventory item</Description>
+            <HotspotX>20</HotspotX>
+            <HotspotY>20</HotspotY>
+            <ID>15</ID>
+            <Image>72</Image>
+            <Name>iDimond</Name>
+            <PlayerStartsWithItem>False</PlayerStartsWithItem>
+            <Properties />
+            <Interactions>
+              <Event Index="0" />
+              <Event Index="1" />
+              <Event Index="2" />
+              <Event Index="3" />
+              <Event Index="4" />
+            </Interactions>
+          </InventoryItem>
         </InventoryItems>
       </InventoryItemFolder>
     </InventoryItems>
@@ -2590,10 +2626,10 @@
             <ScriptName>cEgo</ScriptName>
             <Solid>True</Solid>
             <SpeechAnimationDelay>5</SpeechAnimationDelay>
-            <SpeechColor>12</SpeechColor>
+            <SpeechColor>63</SpeechColor>
             <SpeechView>0</SpeechView>
-            <StartX>190</StartX>
-            <StartY>155</StartY>
+            <StartX>193</StartX>
+            <StartY>158</StartY>
             <StartingRoom>3</StartingRoom>
             <ThinkingView>0</ThinkingView>
             <TurnBeforeWalking>True</TurnBeforeWalking>
@@ -2674,10 +2710,10 @@
             <ScriptName>cJAF</ScriptName>
             <Solid>True</Solid>
             <SpeechAnimationDelay>5</SpeechAnimationDelay>
-            <SpeechColor>12</SpeechColor>
+            <SpeechColor>2016</SpeechColor>
             <SpeechView>0</SpeechView>
-            <StartX>312</StartX>
-            <StartY>178</StartY>
+            <StartX>313</StartX>
+            <StartY>179</StartY>
             <StartingRoom>5</StartingRoom>
             <ThinkingView>0</ThinkingView>
             <TurnBeforeWalking>True</TurnBeforeWalking>
@@ -2688,7 +2724,7 @@
               <Event Index="0" />
               <Event Index="1" />
               <Event Index="2">cJAF_Talk</Event>
-              <Event Index="3" />
+              <Event Index="3">cJAF_UseInv</Event>
               <Event Index="4" />
               <Event Index="5" />
               <Event Index="6" />
@@ -2712,14 +2748,14 @@
             <MovementSpeedY>0</MovementSpeedY>
             <NormalView>4</NormalView>
             <Properties />
-            <RealName xml:space="preserve">New character</RealName>
+            <RealName xml:space="preserve">Top Hat Frog</RealName>
             <ScriptName>cTHF</ScriptName>
             <Solid>True</Solid>
             <SpeechAnimationDelay>5</SpeechAnimationDelay>
-            <SpeechColor>12</SpeechColor>
+            <SpeechColor>15942</SpeechColor>
             <SpeechView>0</SpeechView>
             <StartX>176</StartX>
-            <StartY>264</StartY>
+            <StartY>262</StartY>
             <StartingRoom>4</StartingRoom>
             <ThinkingView>0</ThinkingView>
             <TurnBeforeWalking>True</TurnBeforeWalking>
@@ -2830,38 +2866,24 @@ return
             <Script><![CDATA[// Dialog script file
 @S  // Dialog startup entry point
 cTHF: What are you doing with my brothers ship 
-cEgo: He gave it to me, my ship crash landed on his property
+cEgo: He gave it to me, my space ship crash landed on his property
 cTHF: He is too trusting
 cTHF: I assume you are looking for that glowing orbe
 cEgo: YES thats my power core.
 cTHF: Well it's not here any more
-cTHF: Someone took it
-cEgo: Who? 
+cTHF: My Boss took it
+cEgo: Can I Talk to him?
 cTHF: Look I might look like my brother but I am sure as hell not as nice as him 
 cTHF: I am going to need you to give me something if you want that information
-return 
-@1
+cEgo: What do you need?
 cTHF: I am a hungry frog there is a beach around here with some Coco nuts
 cTHF: God I love my coco nuts, go and bring three back to me 
-cTHF: Then I will tell you who took your orbe and probably where he is going with it
-stop
-@2
-cTHF: Ok Good Luck finding your orbe then
-stop ]]></Script>
-            <DialogOptions>
-              <DialogOption>
-                <ID>1</ID>
-                <Say>True</Say>
-                <Show>True</Show>
-                <Text xml:space="preserve">What do you need?</Text>
-              </DialogOption>
-              <DialogOption>
-                <ID>2</ID>
-                <Say>True</Say>
-                <Show>True</Show>
-                <Text xml:space="preserve">No I am not helping you </Text>
-              </DialogOption>
-            </DialogOptions>
+cTHF: Then i will let you pass to talk to my boss
+cEgo: Ok I will get those for you
+
+return 
+]]></Script>
+            <DialogOptions />
           </Dialog>
           <Dialog>
             <ID>2</ID>
@@ -2869,7 +2891,7 @@ stop ]]></Script>
             <ShowTextParser>False</ShowTextParser>
             <Script><![CDATA[// Dialog script file
 @S  // Dialog startup entry point
-cTHF: so you are back?
+cTHF: So you are back?
 cTHF: Did you get my coconuts
 
 return
@@ -2902,12 +2924,96 @@ stop ]]></Script>
             <ShowTextParser>False</ShowTextParser>
             <Script><![CDATA[// Dialog script file
 @S  // Dialog startup entry point
-cEvil_Frog:Who are you?
+cEgo:Hello there
+cEvil_Frog:Who are you? How did you get in here?
+cEgo:I am Ego, I got let in
+cEvil_Frog:Top hat keeps letting people in
+cEvil_Frog:Did you give him CoCo Nuts?
+cEgo:Yes
+cEvil_Frog:He really does love his CoCo Nuts
+cEvil_Frog:I am going to have to fire him now
+cEvil_Frog:What do you want?
+cEgo: I want my orbe back 
+cEgo: That is the only way that I am able to get back to my planet
+cEvil_Frog:Well I am sorry but I need this to fix my computers
+cEvil_Frog:I got a virus on it and now they wont turn on
+cEgo: I dont think that is a problem the orbe will solve
+cEgo: It is a power source, it seems like you have a hardware issue
+cEgo: I have an AI assistant that can help
+cEgo: She can fix all your computers for you
+cEvil_Frog:Thats great get her over here
+
+return
+]]></Script>
+            <DialogOptions />
+          </Dialog>
+          <Dialog>
+            <ID>4</ID>
+            <Name>dJAF</Name>
+            <ShowTextParser>False</ShowTextParser>
+            <Script><![CDATA[// Dialog script file
+@S  // Dialog startup entry point
+cJAF:Oh you are a big one, what are you doing here?
+cEgo:I am looking to repare my ship
+cJAF:Well I wouldnt know how to help you there
+cEgo:I just need a little bit of help getting across this ocean
+cJAF:Well you could use my ship down by the doc
+cJAF:I am just going to need something in return
+cEgo:What do you need help with? 
+cJAF:I need something from my brother
+cJAF:He's on that island that is just north from here
+cEgo:That is perfect I needed to go there to get get my orbe anyway
+cJAF:Orbe?
+cEgo:Its the power source to my ship
+cJAF:Oh ok, well you can go down to the doc and use my ship
+cJAF:Just give my brother this note he'll know what to give you after
 
 
+return
+]]></Script>
+            <DialogOptions />
+          </Dialog>
+          <Dialog>
+            <ID>5</ID>
+            <Name>dTopHatPaper</Name>
+            <ShowTextParser>False</ShowTextParser>
+            <Script><![CDATA[// Dialog script file
+@S  // Dialog startup entry point
+cEgo:Oh also I have something for your brother
+cEgo:He asked me to bring something back for him in return for me using his ship
+cJAF:Ok good to see he isnt all trusting
+cJAF:Once you get me my coconuts I will give you what he needs
 
-cEgo: I need my Orbe back
+return
+]]></Script>
+            <DialogOptions />
+          </Dialog>
+          <Dialog>
+            <ID>6</ID>
+            <Name>dCOCONuts</Name>
+            <ShowTextParser>False</ShowTextParser>
+            <Script><![CDATA[// Dialog script file
+@S  // Dialog startup entry point
+cJAF:MY COCO NUTS
+cJAF:God you dont even know how much these are my faviote
+cEgo:I am glad I can help, Can I go talk to your boss now?
+cJAF:Oh yeah also here these are a few things you might need
+cJAF:My boss took the orbe but let me keep these things that fell from the sky
+cJAF:I am Assuming they are yours
+cJAF:Also Here is what my brother was asking for
+cJAF:Its his faviorte rock I dont know he loves it so much nut he needs it back
+cJAF:It just looks stupid to me
 
+return
+]]></Script>
+            <DialogOptions />
+          </Dialog>
+          <Dialog>
+            <ID>7</ID>
+            <Name>dGideon</Name>
+            <ShowTextParser>False</ShowTextParser>
+            <Script><![CDATA[// Dialog script file
+@S  // Dialog startup entry point
 return
 ]]></Script>
             <DialogOptions />
@@ -3392,6 +3498,16 @@ return
         <GlobalVariable>
           <DefaultValue>0</DefaultValue>
           <Name>Ai_Power</Name>
+          <Type>int</Type>
+        </GlobalVariable>
+        <GlobalVariable>
+          <DefaultValue>0</DefaultValue>
+          <Name>JAF_task</Name>
+          <Type>int</Type>
+        </GlobalVariable>
+        <GlobalVariable>
+          <DefaultValue>0</DefaultValue>
+          <Name>Talked_to_Evilfrog</Name>
           <Type>int</Type>
         </GlobalVariable>
       </Variables>
@@ -5074,13 +5190,13 @@ return
                       <ImportAlphaChannel>True</ImportAlphaChannel>
                     </Source>
                   </Sprite>
-                  <Sprite Slot="5" Width="300" Height="300" ColorDepth="32" Resolution="Real" AlphaChannel="True">
+                  <Sprite Slot="5" Width="100" Height="100" ColorDepth="32" Resolution="Real" AlphaChannel="True">
                     <Source>
-                      <FileName>C:\Users\Ddesider\Downloads\space ship3.png</FileName>
+                      <FileName>C:\Users\Ddesider\Downloads\shipnew.png</FileName>
                       <OffsetX>0</OffsetX>
                       <OffsetY>0</OffsetY>
-                      <ImportHeight>300</ImportHeight>
-                      <ImportWidth>300</ImportWidth>
+                      <ImportHeight>100</ImportHeight>
+                      <ImportWidth>100</ImportWidth>
                       <ImportAsTile>False</ImportAsTile>
                       <Frame>0</Frame>
                       <RemapToGamePalette>False</RemapToGamePalette>
@@ -5171,6 +5287,36 @@ return
                       <OffsetY>0</OffsetY>
                       <ImportHeight>50</ImportHeight>
                       <ImportWidth>50</ImportWidth>
+                      <ImportAsTile>False</ImportAsTile>
+                      <Frame>0</Frame>
+                      <RemapToGamePalette>False</RemapToGamePalette>
+                      <RemapToRoomPalette>False</RemapToRoomPalette>
+                      <ImportMethod>LeaveAsIs</ImportMethod>
+                      <ImportAlphaChannel>True</ImportAlphaChannel>
+                    </Source>
+                  </Sprite>
+                  <Sprite Slot="71" Width="32" Height="32" ColorDepth="32" Resolution="Real" AlphaChannel="True">
+                    <Source>
+                      <FileName>C:\Users\Ddesider\Downloads\New Piskel-1.png.png</FileName>
+                      <OffsetX>0</OffsetX>
+                      <OffsetY>0</OffsetY>
+                      <ImportHeight>32</ImportHeight>
+                      <ImportWidth>32</ImportWidth>
+                      <ImportAsTile>False</ImportAsTile>
+                      <Frame>0</Frame>
+                      <RemapToGamePalette>False</RemapToGamePalette>
+                      <RemapToRoomPalette>False</RemapToRoomPalette>
+                      <ImportMethod>LeaveAsIs</ImportMethod>
+                      <ImportAlphaChannel>True</ImportAlphaChannel>
+                    </Source>
+                  </Sprite>
+                  <Sprite Slot="72" Width="40" Height="40" ColorDepth="32" Resolution="Real" AlphaChannel="True">
+                    <Source>
+                      <FileName>C:\Users\Ddesider\Downloads\dimond.png</FileName>
+                      <OffsetX>0</OffsetX>
+                      <OffsetY>0</OffsetY>
+                      <ImportHeight>40</ImportHeight>
+                      <ImportWidth>40</ImportWidth>
                       <ImportAsTile>False</ImportAsTile>
                       <Frame>0</Frame>
                       <RemapToGamePalette>False</RemapToGamePalette>
