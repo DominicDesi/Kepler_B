@@ -3251,7 +3251,7 @@ return
         <AnimateOnlyWhenMoving>False</AnimateOnlyWhenMoving>
         <AnimationDelay>5</AnimationDelay>
         <HotspotX>15</HotspotX>
-        <HotspotY>13</HotspotY>
+        <HotspotY>14</HotspotY>
         <ID>2</ID>
         <Image>2057</Image>
         <Name>Interact</Name>
